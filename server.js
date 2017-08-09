@@ -6,8 +6,8 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var articles = { 
-          articleOne : {
+
+         var articleOne = {
           title : 'Article-one',
           heading : 'Article-one',
           date :'7th August 2017',
@@ -23,44 +23,44 @@ var articles = {
                         <p>
                             This is my first article.
                         </p>`
-        },
+        };
         
-        articleTwo : {
-             title : 'Article-one',
-          heading : 'Article-one',
-          date :'7th August 2017',
-          content : ` <p>
-                            This is my first article.
-                        </p>
-                        <p>
-                            This is my first article.
-                        </p>
-                        <p>
-                            This is my first article.
-                        </p>
-                        <p>
-                            This is my first article.
-                        </p>`
-        },
+//         articleTwo : {
+//              title : 'Article-one',
+//           heading : 'Article-one',
+//           date :'7th August 2017',
+//           content : ` <p>
+//                             This is my first article.
+//                         </p>
+//                         <p>
+//                             This is my first article.
+//                         </p>
+//                         <p>
+//                             This is my first article.
+//                         </p>
+//                         <p>
+//                             This is my first article.
+//                         </p>`
+//         },
         
-        articleThree : {
-             title : 'Article-one',
-          heading : 'Article-one',
-          date :'7th August 2017',
-          content : ` <p>
-                            This is my first article.
-                        </p>
-                        <p>
-                            This is my first article.
-                        </p>
-                        <p>
-                            This is my first article.
-                        </p>
-                        <p>
-                            This is my first article.
-                        </p>`
-        }
-};
+//         articleThree : {
+//              title : 'Article-one',
+//           heading : 'Article-one',
+//           date :'7th August 2017',
+//           content : ` <p>
+//                             This is my first article.
+//                         </p>
+//                         <p>
+//                             This is my first article.
+//                         </p>
+//                         <p>
+//                             This is my first article.
+//                         </p>
+//                         <p>
+//                             This is my first article.
+//                         </p>`
+//         }
+// };
 
 function createTemplate(data) {
         
