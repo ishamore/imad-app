@@ -81,7 +81,8 @@ function createTemplate(data) {
                     </div>
                     <hr/>
                     
-                            ${heading}
+                    
+                    <h2>    ${heading} </h2>
                     
                     <div>
                            ${date}
