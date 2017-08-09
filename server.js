@@ -6,13 +6,14 @@ var app = express();
 app.use(morgan('combined'));
 
 
-
-         var articleOne = {
-          title : 'Article-one',
-          heading : 'Article-one',
-          date :'7th August 2017',
-          content : ` <p>
-                            This is my first article.
+var articles = {
+    
+         articleOne : {
+         title : 'Article-one',
+         heading : 'Article-one',
+         date :'7th August 2017',
+         content : ` <p>
+                           This is my first article.
                         </p>
                         <p>
                             This is my first article.
@@ -23,44 +24,31 @@ app.use(morgan('combined'));
                         <p>
                             This is my first article.
                         </p>`
-        };
+        },
         
-//         articleTwo : {
-//              title : 'Article-one',
-//           heading : 'Article-one',
-//           date :'7th August 2017',
-//           content : ` <p>
-//                             This is my first article.
-//                         </p>
-//                         <p>
-//                             This is my first article.
-//                         </p>
-//                         <p>
-//                             This is my first article.
-//                         </p>
-//                         <p>
-//                             This is my first article.
-//                         </p>`
-//         },
+        articleTwo : {
+             title : 'Article-one',
+          heading : 'Article-one',
+          date :'10th August 2017',
+          content : ` <p>
+                            This is my first article.
+                        </p>
+                        <p>
+                            This is my first article.
+                        </p> `
+                        
+        },
         
-//         articleThree : {
-//              title : 'Article-one',
-//           heading : 'Article-one',
-//           date :'7th August 2017',
-//           content : ` <p>
-//                             This is my first article.
-//                         </p>
-//                         <p>
-//                             This is my first article.
-//                         </p>
-//                         <p>
-//                             This is my first article.
-//                         </p>
-//                         <p>
-//                             This is my first article.
-//                         </p>`
-//         }
-// };
+        articleThree : {
+             title : 'Article-one',
+          heading : 'Article-one',
+          date :'18th August 2017',
+          content : ` <p>
+                            This is my first article.
+                        </p> `
+                       
+        }
+};
 
 function createTemplate(data) {
         
@@ -81,15 +69,14 @@ function createTemplate(data) {
                     </div>
                     <hr/>
                     
-                    
                     <h2>    ${heading} </h2>
                     
                     <div>
-                           ${date}
+                            ${date}
                     </div>
                     
                     <div>
-                        ${content}
+                            ${content}
                     </div>
                 </div>
             </body>
@@ -105,17 +92,12 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function(req, res){
-    res.send(createTemplate(articleOne));
+app.get('/:articleName', function(req, res){
+    
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/article-two', function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
-
-app.get('/article-three', function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
