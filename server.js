@@ -27,7 +27,7 @@ var articles = {
         },
         
         articleTwo : {
-             title : 'Article-one',
+          title : 'Article-one',
           heading : 'Article-one',
           date :'10th August 2017',
           content : ` <p>
@@ -40,7 +40,7 @@ var articles = {
         },
         
         articleThree : {
-             title : 'Article-one',
+          title : 'Article-one',
           heading : 'Article-one',
           date :'18th August 2017',
           content : ` <p>
